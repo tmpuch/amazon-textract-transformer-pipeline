@@ -348,6 +348,7 @@ def model_fn(model_dir):
     model = AutoModelForTokenClassification.from_pretrained(model_dir)
     model.eval()
     model.to(device)
+        
     logger.info(f"Model loaded")
     return {
         "collator": collator,

@@ -6,6 +6,19 @@
 ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
+
+# START - added by tmp 2023-05-23 
+#RUN pip install --upgrade pip
+RUN apt-get update -y && apt-get install -y --no-install-recommends build-essential gcc \
+                                        libsndfile1 
+
+#RUN apt-get install libsndfile1
+#RUN apt-get install libsndfile1-dev
+RUN pip install SoundFile 
+RUN pip install librosa
+# END - added by tmp 2023-05-23 
+
+
 # Core dependencies:
 # - Pin PyTorch to prevent pip accidentally re-installing/upgrading it via detectron
 # - Pin setuptools per https://github.com/pytorch/pytorch/issues/69894#issuecomment-1080635462

@@ -23,7 +23,9 @@ config = {
 
     # Set False to skip deploying the page thumbnail image generator, if you're only using models
     # (like LayoutLMv1) that don't take page image as input features:
-    "use_thumbnails": bool_env_var("USE_THUMBNAILS", default=True),
+    #"use_thumbnails": bool_env_var("USE_THUMBNAILS", default=True),
+    # 2023-05-24
+    "use_thumbnails": bool_env_var("USE_THUMBNAILS", default=False),
 
     # Set True to enable auto-scale-to-zero on auto-deployed SageMaker endpoints (including the
     # thumbnail generator and any custom OCR engines). This saves costs for low-volume workloads,
